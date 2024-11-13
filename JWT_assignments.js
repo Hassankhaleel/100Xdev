@@ -21,10 +21,7 @@ app.post('/USERS_POST', (req, res) => {
     let userrname = req.body.userrname;
     let password = req.body.password;
     let user__Role = req.body.role;
-    let user__status = req.body.status;
-
-
-    const userNameSchema = zod.string().min(8, { message: "username must atleast 8 charc." })
+    let user__status = req.body.status; const userNameSchema = zod.string().min(8, { message: "username must atleast 8 charc." })
     const userPassShemza = zod.string().min(8, { message: "Password must be at least 8 characters long." })
     const userRoleSchema = zod.string()
     const userStatusSchema = zod.boolean()
@@ -101,7 +98,7 @@ app.get('/USERS_GET/BY_VIA_DECODING/:role', (req, res) => {
         {
             admin: ["student", "teacher", "peon", "accountant"],
             teacher: ["student"],
-            accountant: ["student", "teacher",],//check for fee status
+            accountant: ["student", "teacher",],//check for felse status
             peon: ["student", "teacher"],
             student: ["student"],
 
